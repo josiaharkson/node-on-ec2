@@ -4,64 +4,55 @@ Simple node.js app that servers "A Monk in Cloud"
 
 Great for testing simple deployments on Cloud
 
-## Step 1: Install NodeJS and NPM using nvm
+## Step 1: Setup EC2 Instance
 Install node version manager (nvm) by typing the following at the command line.
 
 ```bash
-sudo su -
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.34.0/install.sh | bash
-```
-Activate nvm by typing the following at the command line.
 
-```bash
-. ~/.nvm/nvm.sh
 ```
 
-Use nvm to install the latest version of Node.js by typing the following at the command line.
+## Step 2: Connect to EC2 Instance
+Install node version manager (nvm) by typing the following at the command line.
 
 ```bash
-nvm install node
+
 ```
 
-Test that node and npm are installed and running correctly by typing the following at the terminal:
+
+## Step 3: Upgrade and update packages
 
 ```bash
+sudo apt update
+sudo apt upgrade
+```
+
+## Step 4: Install Node.js
+
+```bash
+curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+sudo apt-get install -y nodejs
 node -v
-npm -v
 ```
 
-## Step 2: Install Git and clone repository from GitHub
-To install git, run below commands in the terminal window:
+
+## Step 5: Install Git
 
 ```bash
-sudo apt-get update -y
-sudo apt-get install git -y
+sudo apt-get install git
+git --version
 ```
 
-Just to verify if system has git installed or not, please run below command in terminal:
+Create a personal access token on your Github account if you dont have one already
+run the command to save any future username and token.
 ```bash
-git — version
+git config --global credential.helper store
 ```
-
-This command will print the git version in the terminal.
-
-Run below command to clone the code repository from Github:
-
+Clone your repo
 ```bash
-git clone https://github.com/yeshwanthlm/nodejs-on-ec2.git
+git clone yourproject.git
 ```
 
-Get inside the directory and Install Packages
 
-```bash
-cd nodejs-on-ec2
-npm install
-```
 
-Start the application
-To start the application, run the below command in the terminal:
 
-```bash
-npm start
-```
 
