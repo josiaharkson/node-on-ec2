@@ -52,6 +52,35 @@ Clone your repo
 git clone yourproject.git
 ```
 
+## Step 6: Install Caddy
+Visit https://caddyserver.com/docs/install
+
+run the below commands
+```bash
+sudo ufw allow proto tcp from any port 80,443
+sudo ufw status
+```
+if stsatus is inactive, run
+```bash
+sudo ufw enable
+```
+ The command 
+```bash
+sudo ufw allow proto tcp from any port 80,443
+sudo ufw status
+```
+
+should now show
+```
+Status: active
+
+To                         Action      From
+--                         ------      ----
+Anywhere                   ALLOW       80,443/tcp                
+Anywhere (v6)              ALLOW       80,443/tcp (v6)   
+```
+
+
 
 
 
