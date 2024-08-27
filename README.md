@@ -79,8 +79,30 @@ To                         Action      From
 Anywhere                   ALLOW       80,443/tcp                
 Anywhere (v6)              ALLOW       80,443/tcp (v6)   
 ```
+## Setup PM2 process manager to keep your app running
 
+Install pm2 globally 
 
+```
+sudo npm i pm2 -g
+```
+
+Generating a Startup Script
+```
+pm2 startup
+```
+
+Follow the instructions on the result after running the script above.
+
+You should see a successful message similar to the below
+```
+[PM2] [v] Command successfully executed
+```
+
+Open you app and start your Node.js app using pm2
+```
+ pm2 start yarn --name "{app_name_to_show_on_pm2_table}" -- prod
+```
 
 
 
